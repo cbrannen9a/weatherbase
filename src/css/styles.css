@@ -91,13 +91,9 @@ body {
 			box-shadow: 1px 1px 4px #333; }
 			
 .weatherLocation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  box-pack: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  color: #595959;
+  width: 50%;
+  margin: auto;
   margin-top: 10px; }
 
 .weatherCardContainer {
