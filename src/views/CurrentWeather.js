@@ -40,7 +40,6 @@ class CurrentWeather extends Component {
 						cityNotFound: '404',
 					});
 				} else {
-					console.log(data.data);
 					// Determine weather icon
 					let weatherId = data.data.list[0].weather[0].id;
 
@@ -66,19 +65,14 @@ class CurrentWeather extends Component {
 						currentConditionDescription: data.data.list[0].weather[0].description,
 						cityName: data.data.city.name,
 						country: data.data.city.country
-
-						// currentTemp: Math.round(data.data.main.temp) + '°',
-						// humidity: data.data.main.humidity + '%',
-						// wind: Math.round(data.data.wind.speed) + ' mph',
-						// windDirection: data.data.wind.deg,
-						// currentCondition: data.data.weather[0].main,
-						// currentConditionDescription: data.data.weather[0].description,
-						// cityName: data.data.name,
 					});
 				}
 			})
 			.catch(err => {
-				console.log(err);
+				this.setState({
+					isLoading: false,
+					cityNotFound: 404
+				});
 			});
 	}
 
@@ -86,15 +80,15 @@ class CurrentWeather extends Component {
 		const WeatherCardError = (
 			<div className='weatherCardContainer'>
 				<div className='weatherCardError'>
+					<h4>Location Not Found</h4>
 					<img src={NoLocationFound} alt='no location found' />
-
 					<Link to='/'><button>Try Again</button></Link>
 				</div>
 			</div>
 		);
 
 		const cityNotFound = this.state.cityNotFound;
-		console.log(cityNotFound);
+
 		const WeatherConditions = (cityNotFound === 404) ? (
 
 			<div> {WeatherCardError} </div>) : (
@@ -102,6 +96,10 @@ class CurrentWeather extends Component {
 				<div>
 					<div className='homeBtn'>
 						<Link to='/'><button>Home</button></Link>
+					</div>
+					<div className='weatherLocation'>
+						<h4> Location | {this.state.cityName} </h4>
+						<h4> Country | {this.state.country} </h4>
 					</div>
 					<div className='weatherCardContainer'>
 						<div className='weatherCard'>
@@ -116,8 +114,7 @@ class CurrentWeather extends Component {
 							</div>
 						</div>
 
-						<h4> Location | {this.state.cityName} </h4>
-						<h4> Country | {this.state.country} </h4>
+
 					</div>
 				</div>
 

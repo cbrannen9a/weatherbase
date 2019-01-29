@@ -1,7 +1,9 @@
 body {
+  height: 100vh;
   margin: 10;
   padding: 0;
   font-family: sans-serif;
+  background-image: linear-gradient(141deg, #76eeba 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 .header {
   display: -webkit-box;
@@ -29,7 +31,8 @@ body {
     width: 25%;
     text-align: center;
     font-size: .9em;
-    color: #C0C0C0; }
+	color:white;
+ }
 
 .locationInput {
   display: -webkit-box;
@@ -85,7 +88,17 @@ body {
     background: #a8a8a8;
     color: #FFF;
     -webkit-box-shadow: 1px 1px 4px #333;
-            box-shadow: 1px 1px 4px #333; }
+			box-shadow: 1px 1px 4px #333; }
+			
+.weatherLocation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  box-pack: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px; }
 
 .weatherCardContainer {
   display: -webkit-box;
@@ -213,10 +226,10 @@ body {
 	  margin-top: 20px; }
 
 .loading {
-	    height: 200px;
-    width: 200px;
-  
-min-height: 100px;
+  height: 200px;
+	width: 50%;
+	margin: auto;  
+  min-height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
