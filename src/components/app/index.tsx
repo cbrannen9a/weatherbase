@@ -1,20 +1,18 @@
 import React, { FC } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "../../views/Home";
-import CurrentWeather from "../../views/CurrentWeather";
-import ErrorDisplay from "../../views/ErrorDisplay";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "../../pages/home";
+import Weather from "../../pages/weather";
 
 const App: FC<Props> = () => (
   <Router>
-    <Route exact path="/">
-      <Home />
-    </Route>
-    <Route exact path="/current-weather">
-      <CurrentWeather />
-    </Route>
-    <Route exact path="/error">
-      <ErrorDisplay />
-    </Route>
+    <Switch>
+      <Route exact path="/current-weather">
+        <Weather />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
   </Router>
 );
 
