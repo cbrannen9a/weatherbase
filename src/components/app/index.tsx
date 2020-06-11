@@ -1,13 +1,13 @@
 import React, { FC } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../../pages/home";
-import CurrentWeather from "../../views/CurrentWeather";
+import Weather from "../../pages/weather";
 
 const App: FC<Props> = () => (
   <Router>
     <Switch>
       <Route exact path="/current-weather">
-        <CurrentWeather />
+        <Weather />
       </Route>
       <Route path="/">
         <Home />
