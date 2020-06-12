@@ -1,0 +1,64 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+commands:
+  firebase-deploy:
+    description: Deploy to Firebase
+    steps:
+      - run:
+          name: Deploy to Firebase
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting
+  yarn-install:
+    description: Run Yarn Install
+    steps:
+      - run:
+          name: Yarn Install
+          command: yarn install
+  yarn-build:
+    description: Run Yarn Build
+    steps:
+      - run:
+          name: Yarn Build
+          command: yarn build
+  yarn-test:
+    description: Run Yarn Test
+    steps:
+      - run:
+          name: Yarn Test
+          command: yarn test
+jobs:
+  build-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - yarn-install
+            - yarn-build
+            - yarn-test
+  build-test-and-deploy:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - yarn-install
+            - yarn-build
+            - yarn-test
+            - firebase-deploy
+
+workflows:
+  build-test:
+    jobs:
+      - build-test:
+          filters:
+            branches:
+              only: develop
+  build-test-deploy:
+    jobs:
+      - build-test-and-deploy:
+          filters:
+            branches:
+              only: master
