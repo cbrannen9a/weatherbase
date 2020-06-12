@@ -1,4 +1,5 @@
 import { Icons } from "../components/icon";
+import { WeatherDataResponse, WeatherData } from "../types";
 
 export const getWeatherIconName = (weatherId: number): Icons => {
   if (weatherId <= 232) {
@@ -15,9 +16,23 @@ export const getWeatherIconName = (weatherId: number): Icons => {
   return "UNKNOWN";
 };
 
-export const formatTemperature = (temp: string) => Math.round(+temp) + "°";
+export const formatTemperature = (temp: number) => Math.round(+temp) + "°";
 
-export const formatHumidity = (humidity: string) => humidity + "%";
+export const formatHumidity = (humidity: number) => humidity + "%";
 
-export const formatWind = (windSpeed: string) =>
+export const formatWindSpeed = (windSpeed: number) =>
   Math.round(+windSpeed) + " mph";
+
+export const normaliseWeatherData = (
+  responseData: WeatherDataResponse
+): WeatherData => {
+  return {
+    weatherIcon: getWeatherIconName(responseData.list[0].weather[0].id),
+    temperature: formatTemperature(responseData.list[0].main.temp),
+    humidity: formatHumidity(responseData.list[0].main.humidity),
+    windSpeed: formatWindSpeed(responseData.list[0].wind.speed),
+    conditions: responseData.list[0].weather[0].description,
+    cityName: responseData.city.name,
+    country: responseData.city.country,
+  };
+};
