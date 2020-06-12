@@ -16,6 +16,7 @@
     "typescript": "^3.9.5"
   },
   "devDependencies": {
+    "firebase-tools": "^8.4.2",
     "react-scripts": "3.4.1"
   },
   "scripts": {
