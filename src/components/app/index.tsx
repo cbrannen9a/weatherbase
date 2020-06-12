@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../../pages/home";
 import Weather from "../../pages/weather";
 
-const App: FC<Props> = () => (
+const App: FC = () => (
   <Router>
     <Switch>
-      <Route exact path="/current-weather">
+      <Route exact path="/weather/:location">
         <Weather />
       </Route>
       <Route path="/">
@@ -15,7 +15,5 @@ const App: FC<Props> = () => (
     </Switch>
   </Router>
 );
-
-interface Props {}
 
 export default App;
