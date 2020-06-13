@@ -93,7 +93,7 @@ body {
   align-items: center;
   margin-top: 20px;
 }
-.homeBtn button {
+.homeBtn a {
   padding: 10px 22px;
   border-radius: 2px;
   margin-left: 4px;
@@ -102,6 +102,7 @@ body {
   color: #fff;
   -webkit-box-shadow: 1px 1px 4px #333;
   box-shadow: 1px 1px 4px #333;
+  text-decoration: none;
 }
 
 .weatherLocation {
@@ -235,7 +236,7 @@ body {
   width: 70%;
   text-align: center;
 }
-.weatherCardContainer .weatherCardError button {
+.weatherCardContainer .weatherCardError a {
   padding: 10px 22px;
   border-radius: 2px;
   margin-left: 4px;
@@ -245,6 +246,7 @@ body {
   -webkit-box-shadow: 1px 1px 4px #333;
   box-shadow: 1px 1px 4px #333;
   margin-top: 20px;
+  text-decoration: none;
 }
 
 .loading {

@@ -16,12 +16,12 @@ export const getWeatherIconName = (weatherId: number): Icons => {
   return "UNKNOWN";
 };
 
-export const formatTemperature = (temp: number) => Math.round(+temp) + "°";
+export const formatTemperature = (temp: number) => Math.round(temp) + "°";
 
 export const formatHumidity = (humidity: number) => humidity + "%";
 
 export const formatWindSpeed = (windSpeed: number) =>
-  Math.round(+windSpeed) + " mph";
+  Math.round(windSpeed) + " mph";
 
 export const normaliseWeatherData = (
   responseData: WeatherDataResponse
