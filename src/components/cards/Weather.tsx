@@ -8,7 +8,7 @@ const Weather: FC<Props> = ({ data }) => {
     <div>
       <div className="homeBtn">
         <Link to="/">
-          <button>Home</button>
+          <span>Home</span>
         </Link>
       </div>
       <div className="weatherLocation">

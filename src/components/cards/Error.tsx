@@ -8,7 +8,7 @@ const Error: FC = () => (
       <h4>Location Not Found</h4>
       <Icon icon="NO_LOCATION" />
       <Link to="/">
-        <button>Try Again</button>
+        <span>Try Again</span>
       </Link>
     </div>
   </div>

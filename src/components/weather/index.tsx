@@ -19,7 +19,7 @@ const Weather: FC = () => {
         try {
           const result = await fetch(getWeatherDataQueryUrl(location));
           const data = await result.json();
-          console.log(data);
+
           setStatus(success(normaliseWeatherData(data)));
         } catch (e) {
           setStatus(error(e));
