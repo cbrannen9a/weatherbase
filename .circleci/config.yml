@@ -25,7 +25,7 @@ commands:
     steps:
       - run:
           name: Yarn Test
-          command: echo "TODO yarn test"
+          command: yarn test
 jobs:
   build-test:
     executor:
