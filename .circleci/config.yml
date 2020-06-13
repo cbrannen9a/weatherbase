@@ -55,7 +55,7 @@ workflows:
       - build-test:
           filters:
             branches:
-              only: develop
+              ignore: master
   build-test-deploy:
     jobs:
       - build-test-and-deploy:
