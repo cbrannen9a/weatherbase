@@ -1,5 +1,8 @@
 import React, { FC } from "react";
 import Icon, { Icons } from "../../icon";
+import CardContainer from "../base";
+import ConditionsOverview from "./ConditionsOverview";
+import ConditionsDetails from "./ConditionsDetails";
 
 const Card: FC<Props> = ({
   weatherIcon,
@@ -8,21 +11,11 @@ const Card: FC<Props> = ({
   humidity,
   windSpeed,
 }) => (
-  <>
-    <div className="weatherCardContainer">
-      <div className="weatherCard">
-        <Icon icon={weatherIcon} />
-        <div className="conditionsOverview">
-          <p>{temperature}</p>
-          <p>{conditions}</p>
-        </div>
-        <div className="conditionDetails">
-          <p>Humidity: {humidity} </p>
-          <p>Wind Speed: {windSpeed} </p>
-        </div>
-      </div>
-    </div>
-  </>
+  <CardContainer>
+    <Icon icon={weatherIcon} />
+    <ConditionsOverview temperature={temperature} conditions={conditions} />
+    <ConditionsDetails humidity={humidity} windSpeed={windSpeed} />
+  </CardContainer>
 );
 
 interface Props {

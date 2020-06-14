@@ -14,7 +14,7 @@ interface Props {
 const StyledInstructions = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin: 1rem 0.5rem;
   text-align: center;
   font-size: 0.9em;
   color: white;

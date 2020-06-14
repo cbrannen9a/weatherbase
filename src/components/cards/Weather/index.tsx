@@ -16,8 +16,6 @@ const Weather: FC<Props> = ({ data }) => {
   } = data;
   return (
     <>
-      <HomeLink />
-      <LocationDetails cityName={cityName} country={country} />
       <Card
         weatherIcon={weatherIcon}
         temperature={temperature}
@@ -25,6 +23,8 @@ const Weather: FC<Props> = ({ data }) => {
         conditions={conditions}
         windSpeed={windSpeed}
       />
+      <LocationDetails cityName={cityName} country={country} />
+      <HomeLink />
     </>
   );
 };

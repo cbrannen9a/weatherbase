@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const StyledLink = styled(Link)<Props>`
   padding: 0.75rem;
+  margin: 0.5rem;
   border-radius: 2px;
-  margin-left: 4px;
   border: none;
   background: ${(props) => props?.background ?? "#fff"};
   color: #fff;

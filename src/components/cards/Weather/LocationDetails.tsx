@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const LocationDetails: FC<Props> = ({ cityName, country }) => (
   <LocationContainer>
-    <h4> Location | {cityName} </h4>
-    <h4> Country | {country} </h4>
+    <span> Location | {cityName} </span>
+    <span> Country | {country} </span>
   </LocationContainer>
 );
 
@@ -19,6 +19,7 @@ const LocationContainer = styled.div`
   text-align: center;
   color: #595959;
   margin-top: 1rem;
+  justify-content: space-between;
 `;
 
 export default LocationDetails;
