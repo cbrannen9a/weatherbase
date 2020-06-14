@@ -31,7 +31,6 @@ const Weather: FC = () => {
 
     fetchData();
   }, [location]);
-
   switch (status.type) {
     case "success":
       return <WeatherCard data={status.data} />;

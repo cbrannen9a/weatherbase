@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Weather from "../Weather";
+import Weather from "..";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const rendered = () =>
@@ -19,6 +19,7 @@ const rendered = () =>
       />
     </Router>
   );
+
 test("renders Home", () => {
   const { getByText } = rendered();
   const linkElement = getByText(/Home/i);
