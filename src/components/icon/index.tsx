@@ -10,19 +10,21 @@ import Loading from "../../assets/Loading.svg";
 const Icon: FC<Props> = ({ icon }) => {
   switch (icon) {
     case "THUNDER":
-      return <img src={Thunder} alt="Thunder" />;
+      return <img src={Thunder} alt="Thunder" height={"150px"} />;
     case "RAIN":
-      return <img src={Rain} alt="Rain" />;
+      return <img src={Rain} alt="Rain" height={"150px"} />;
     case "SNOW":
-      return <img src={Snow} alt="Snow" />;
+      return <img src={Snow} alt="Snow" height={"150px"} />;
     case "CLEAR":
-      return <img src={Clear} alt="Clear" />;
+      return <img src={Clear} alt="Clear" height={"150px"} />;
     case "CLOUDS":
-      return <img src={Clouds} alt="Clouds" />;
+      return <img src={Clouds} alt="Clouds" height={"150px"} />;
     case "NO_LOCATION":
-      return <img src={NoLocationFound} alt="No Location Found" />;
+      return (
+        <img src={NoLocationFound} alt="No Location Found" height={"150px"} />
+      );
     default:
-      return <img src={Loading} alt="Loading" />;
+      return <img src={Loading} alt="Loading" height={"150px"} />;
   }
 };
 

@@ -1,10 +1,23 @@
 import React, { FC, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import slugify from "react-slugify";
 import styled from "styled-components";
 
 const LocationForm: FC = () => {
-  const [location, setLocation] = useState("");
+  const [path, setPath] = useState("/weather/");
+  const history = useHistory();
+
+  const handleSetPath = (value: string) => setPath(`/weather/${value}`);
+
+  const handleSetLocation = (value: string) => {
+    handleSetPath(slugify(value));
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.keyCode === 13) {
+      history.push(path);
+    }
+  };
 
   return (
     <LocationFormContainer>
@@ -12,10 +25,11 @@ const LocationForm: FC = () => {
         type="text"
         placeholder="Enter Location..."
         name="location"
-        onChange={(event) => setLocation(slugify(event.target.value))}
+        onChange={(event) => handleSetLocation(event.target.value)}
+        onKeyDown={(event) => handleKeyDown(event)}
         required
       />
-      <LocationFormLink to={`/weather/${location}`}>
+      <LocationFormLink to={path}>
         <span>ENTER</span>
       </LocationFormLink>
     </LocationFormContainer>
