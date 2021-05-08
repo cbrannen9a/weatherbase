@@ -55,10 +55,10 @@ workflows:
       - build-test:
           filters:
             branches:
-              ignore: master
+              ignore: main
   build-test-deploy:
     jobs:
       - build-test-and-deploy:
           filters:
             branches:
-              only: master
+              only: main
